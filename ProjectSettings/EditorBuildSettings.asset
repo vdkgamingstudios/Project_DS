@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenuV1.unity
+    guid: 580bc4fa1a7dfa9458c15c2ec13d1d0a
+  - enabled: 1
+    path: Assets/Scenes/RaceTest.unity
+    guid: 25ae1be22c3cf5f4daece28d9ff8516d
+  - enabled: 1
+    path: Assets/Scenes/ArenaTest.unity
+    guid: da2684d30baa1b44bb227fcfb193784e
+  - enabled: 1
+    path: Assets/Scenes/SplitCoOpTest.unity
+    guid: 7aab400a223af8c4f9ecb93c20dc93a4
   m_configObjects: {}
