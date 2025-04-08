@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
     //Selecting the Race Scene
     public void RaceSceneSelect()
     {
-        SceneManager.LoadScene("RaceTest");
+        SceneManager.LoadScene("RaceCourse");
     }
 
     //Selecting the Arena Scene
