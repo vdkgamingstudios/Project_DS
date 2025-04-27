@@ -285,18 +285,24 @@ namespace UnityStandardAssets.Vehicles.Car
 
                 if (wheelHit.collider)
                 {
-                    if (wheelHit.collider.CompareTag("Road"))
+                    if (SaveScript.OnTheTerrain == true)
                     {
-                        Debug.Log("On the road");
-                        SaveScript.OnTheRoad = true;
-                        SaveScript.OnTheTerrain = false;
+                        if (wheelHit.collider.CompareTag("Road"))
+                        {
+                            //Debug.Log("On the road");
+                            SaveScript.OnTheRoad = true;
+                            SaveScript.OnTheTerrain = false;
+                        }
                     }
 
-                    if (wheelHit.collider.CompareTag("Terrain"))
+                    if (SaveScript.OnTheRoad == true)
                     {
-                        Debug.Log("On the terrain");
-                        SaveScript.OnTheRoad = false;
-                        SaveScript.OnTheTerrain = true;
+                        if (wheelHit.collider.CompareTag("Terrain"))
+                        {
+                            //Debug.Log("On the terrain");
+                            SaveScript.OnTheRoad = false;
+                            SaveScript.OnTheTerrain = true;
+                        }
                     }
                 }
 

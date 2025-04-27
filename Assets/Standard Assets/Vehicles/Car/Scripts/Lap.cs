@@ -8,22 +8,37 @@ public class Lap : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            SaveScript.LastLapMinutes = SaveScript.LapTimeMinutes;
-            SaveScript.LastLapSeconds = SaveScript.LapTimeSeconds;
-            SaveScript.LapCount++;
-            SaveScript.LapChange = true;
+            SaveScript.WWDisplayReset = true;
+            StartCoroutine(WrongWayReset());
 
-            if(SaveScript.LapCount == 2)
+            if (SaveScript.HalfWayActivated == true)
             {
-                SaveScript.BestLapTimeMinutes = SaveScript.LastLapMinutes;
-                SaveScript.BestLapTimeSeconds = SaveScript.LastLapSeconds;
-                SaveScript.NewRecord = true;
-            } 
+                SaveScript.HalfWayActivated = false;
+                //SaveScript.WWDisplayReset = true;
+                SaveScript.LastLapMinutes = SaveScript.LapTimeMinutes;
+                SaveScript.LastLapSeconds = SaveScript.LapTimeSeconds;
+                SaveScript.LapCount++;
+                SaveScript.LapChange = true;
 
-            SaveScript.CheckPointPass1 = false;
-            SaveScript.CheckPointPass2 = false;
-            SaveScript.LastCheckPoint1 = SaveScript.ThisCheckPoint1;
-            SaveScript.LastCheckPoint2 = SaveScript.ThisCheckPoint2;
+                if (SaveScript.LapCount == 2)
+                {
+                    SaveScript.BestLapTimeMinutes = SaveScript.LastLapMinutes;
+                    SaveScript.BestLapTimeSeconds = SaveScript.LastLapSeconds;
+                    SaveScript.NewRecord = true;
+                }
+
+                SaveScript.CheckPointPass1 = false;
+                SaveScript.CheckPointPass2 = false;
+                SaveScript.LastCheckPoint1 = SaveScript.ThisCheckPoint1;
+                SaveScript.LastCheckPoint2 = SaveScript.ThisCheckPoint2;
+                //StartCoroutine(WrongWayReset());
+            }
         }
+    }
+
+    IEnumerator WrongWayReset()
+    {
+        yield return new WaitForSeconds(1.5f);
+        SaveScript.WWDisplayReset = false;
     }
 }
