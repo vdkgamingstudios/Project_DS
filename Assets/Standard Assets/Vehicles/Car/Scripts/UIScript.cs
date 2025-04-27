@@ -21,8 +21,10 @@ public class UIScript : MonoBehaviour
     public TMP_Text BestLapTimeMinutesText;
     public TMP_Text BestLapTimeSecondsText;
     public TMP_Text CheckPointTime;
+    public TMP_Text WrongWayText;
     public GameObject CheckPointDisplay;
     public GameObject NewLapRecordDisplay;
+    public GameObject WrongWayDisplay;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +35,7 @@ public class UIScript : MonoBehaviour
         TotalLapCountText.text = "/" + TotalLaps.ToString();
         CheckPointDisplay.SetActive(false);
         NewLapRecordDisplay.SetActive(false);
+        WrongWayDisplay.SetActive(false);
     }
 
     // Update is called once per frame
@@ -189,6 +192,27 @@ public class UIScript : MonoBehaviour
                     StartCoroutine(CheckPointOff());
                 }
             }
+        }
+        #endregion
+        #region WayPoint
+        //Wrong Way message for the player
+        if (SaveScript.WrongWay == true) 
+        {
+            WrongWayDisplay.SetActive(true);
+        }
+        if (SaveScript.WrongWay == false)
+        {
+            WrongWayDisplay.SetActive(false);
+        }
+
+        //Wrong Way Reset display
+        if (SaveScript.WWDisplayReset == false) 
+        {
+            WrongWayText.text = "WRONG WAY!";
+        }
+        if (SaveScript.WWDisplayReset == true)
+        {
+            WrongWayText.text = " ";
         }
         #endregion
     }

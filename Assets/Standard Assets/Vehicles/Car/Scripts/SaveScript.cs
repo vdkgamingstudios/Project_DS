@@ -34,6 +34,11 @@ public class SaveScript : MonoBehaviour
     //Terrain changes
     public static bool OnTheRoad = true;
     public static bool OnTheTerrain = false;
+    public static bool WrongWay = false;
+
+    //Lap Tracker
+    public static bool HalfWayActivated = true;
+    public static bool WWDisplayReset = false;
 
     // Start is called before the first frame update
     void Start()
