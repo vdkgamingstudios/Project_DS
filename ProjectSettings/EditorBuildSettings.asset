@@ -9,18 +9,21 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenuV1.unity
     guid: 580bc4fa1a7dfa9458c15c2ec13d1d0a
   - enabled: 1
+    path: Assets/Scenes/RaceCourseTimeTrial.unity
+    guid: f786f66b2175aa749bc61384bfc21cf3
+  - enabled: 1
     path: Assets/Scenes/RaceCourse.unity
     guid: aaea3e9712a15ca4088e3cc88585893b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ArenaTest.unity
     guid: accf762b6e793c34db5f1c6410972b49
   - enabled: 0
     path: Assets/Scenes/RaceTest.unity
     guid: 25ae1be22c3cf5f4daece28d9ff8516d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ArenaTest2.unity
     guid: da2684d30baa1b44bb227fcfb193784e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SplitCoOpTest.unity
     guid: 7aab400a223af8c4f9ecb93c20dc93a4
   m_configObjects: {}
