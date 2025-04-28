@@ -6,11 +6,14 @@ using TMPro;
 
 public class UIScript : MonoBehaviour
 {
+    //Displayed related to speed and laps
+    [Header("Speed and Lap Variables")]
     private float DisplaySpeed;
     public int TotalLaps = 3;
+    public int TotalCars = 1;
 
-    //UI Display for variables relating to speed, time and lap count. 
-    public Image SpeedRing;
+    //UI Display text for speed, lap count, total lap and time related items 
+    [Header("Display text for Speed, Laps and Time")]
     public TMP_Text SpeedText;
     public TMP_Text LapCountText;
     public TMP_Text TotalLapCountText;
@@ -20,8 +23,17 @@ public class UIScript : MonoBehaviour
     public TMP_Text RaceTimeSecondsText;
     public TMP_Text BestLapTimeMinutesText;
     public TMP_Text BestLapTimeSecondsText;
+
+    //UI Display for errors, checking and totals
+    [Header("Display text errors, checking and totals")]
     public TMP_Text CheckPointTime;
     public TMP_Text WrongWayText;
+    public TMP_Text TotalCarsText;
+    public TMP_Text PlayersPositionText;
+
+    //UI Display for variables relating to speed, time and lap count. 
+    [Header("Speed, Time and Lap Count UI")]
+    public Image SpeedRing;
     public GameObject CheckPointDisplay;
     public GameObject NewLapRecordDisplay;
     public GameObject WrongWayDisplay;
@@ -36,6 +48,9 @@ public class UIScript : MonoBehaviour
         CheckPointDisplay.SetActive(false);
         NewLapRecordDisplay.SetActive(false);
         WrongWayDisplay.SetActive(false);
+        SaveScript.MaxLaps = TotalLaps;
+        TotalCarsText.text = "/" + TotalCars.ToString();
+        PlayersPositionText.text = "1";
     }
 
     // Update is called once per frame
@@ -214,6 +229,9 @@ public class UIScript : MonoBehaviour
         {
             WrongWayText.text = " ";
         }
+        #endregion
+        #region Player Position
+        PlayersPositionText.text = SaveScript.PlayerPosition.ToString();
         #endregion
     }
 

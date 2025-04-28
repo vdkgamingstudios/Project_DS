@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
     //Selecting the Arena Scene
     public void ArenaSceneSelect()
     {
-        SceneManager.LoadScene("ArenaTest");
+        SceneManager.LoadScene("RaceCourseTimeTrial");
     }
 
     //Quitting the game

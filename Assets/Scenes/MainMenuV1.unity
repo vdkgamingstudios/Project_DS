@@ -671,7 +671,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.7890015, y: -156.2316}
+  m_AnchoredPosition: {x: -20, y: -156.2316}
   m_SizeDelta: {x: 64.559, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &324277434
@@ -1990,7 +1990,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -7.7890015, y: 65}
+  m_AnchoredPosition: {x: -7.7890015, y: -27}
   m_SizeDelta: {x: 83.6197, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &687150819
@@ -2593,8 +2593,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.7890015, y: -31}
-  m_SizeDelta: {x: 100.5634, y: 30}
+  m_AnchoredPosition: {x: -3, y: 69}
+  m_SizeDelta: {x: 118.7483, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &887894711
 MonoBehaviour:
@@ -6351,7 +6351,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Arena
+  m_text: Time Trial
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
