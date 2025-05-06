@@ -8,6 +8,15 @@ TagManager:
   - Terrain
   - Barrier
   - Progress
+  - AICar
+  - ProgressAI
+  - ProgressAI2
+  - ProgressAI1
+  - ProgressAI3
+  - ProgressAI4
+  - ProgressAI5
+  - ProgressAI6
+  - ProgressAI7
   layers:
   - Default
   - TransparentFX

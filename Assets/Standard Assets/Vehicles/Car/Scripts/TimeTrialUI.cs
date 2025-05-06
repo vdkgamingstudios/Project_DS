@@ -14,15 +14,24 @@ public class TimeTrialUI : MonoBehaviour
     public TMP_Text TimeTrialSecondsSTxt;
     public TMP_Text TimeTrialMinutesBTxt;
     public TMP_Text TimeTrialSecondsBTxt;
+    public TMP_Text WinMessage;
 
     //Time Trial game object
     [Header("Time Trial Related Game Object")]
     public GameObject TimeTrialObject;
+    public GameObject TimeTrialResults;
+    public GameObject GoldStar;
+    public GameObject SilverStar;
+    public GameObject BronzeStar;
+
+    //Variables to hold time trial values
+    public bool Winner = false;
 
     // Start is called before the first frame update
     void Start()
     {
         TimeTrialObject.SetActive(true);
+        TimeTrialResults.SetActive(false);
     }
 
     // Update is called once per frame
@@ -83,5 +92,45 @@ public class TimeTrialUI : MonoBehaviour
             TimeTrialSecondsBTxt.text = SaveScript.TimeTrialSecondsB.ToString();
         }
         #endregion
+
+        #region Finish Race
+        if (SaveScript.RaceOver == true)
+        {
+            if(Winner == false)
+            {
+                Winner = true;
+                StartCoroutine(ResultsMessage());
+            }
+        }
+
+        #endregion
+    }
+
+    IEnumerator ResultsMessage()
+    {
+        yield return new WaitForSeconds(0.15f); 
+
+        TimeTrialResults.SetActive(true);
+
+        //Look at else if or switch for this later on
+        if(SaveScript.Gold == true)
+        {
+            WinMessage.text = "YOU WON GOLD!";
+            GoldStar.SetActive(true);
+        }
+        if (SaveScript.Silver == true)
+        {
+            WinMessage.text = "YOU WON SILVER!";
+            SilverStar.SetActive(true);
+        }
+        if (SaveScript.Bronze == true)
+        {
+            WinMessage.text = "YOU WON BRONZE!";
+            BronzeStar.SetActive(true);
+        }
+        if (SaveScript.Fail == true)
+        {
+            WinMessage.text = "BETTER LUCK NEXT TIME";
+        }
     }
 }

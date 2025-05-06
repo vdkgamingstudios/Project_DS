@@ -47,6 +47,11 @@ namespace UnityStandardAssets.Vehicles.Car
         private Rigidbody m_Rigidbody;
         private const float k_ReversingThreshold = 0.01f;
 
+        public bool Player = true;
+
+        //Braking around corners
+        public float MySteerHelper = 0.66f;
+
         public bool Skidding { get; private set; }
         public float BrakeInput { get; private set; }
         public float CurrentSteerAngle{ get { return m_SteerAngle; }}
@@ -75,7 +80,20 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void Update()
         {
-            SaveScript.Speed = CurrentSpeed;
+            if(Player == true)
+            {
+                SaveScript.Speed = CurrentSpeed;
+                //SaveScript.Gear = m_GearNum;
+
+                if (SaveScript.BrakeSlide == true)
+                {
+                    m_SteerHelper = 0.99f;
+                }
+                if (SaveScript.BrakeSlide == false)
+                {
+                    m_SteerHelper = MySteerHelper;
+                }
+            }
         }
 
 
@@ -283,25 +301,28 @@ namespace UnityStandardAssets.Vehicles.Car
                 WheelHit wheelHit;
                 m_WheelColliders[i].GetGroundHit(out wheelHit);
 
-                if (wheelHit.collider)
+                if(Player == true)
                 {
-                    if (SaveScript.OnTheTerrain == true)
+                    if (wheelHit.collider)
                     {
-                        if (wheelHit.collider.CompareTag("Road"))
+                        if (SaveScript.OnTheTerrain == true)
                         {
-                            //Debug.Log("On the road");
-                            SaveScript.OnTheRoad = true;
-                            SaveScript.OnTheTerrain = false;
+                            if (wheelHit.collider.CompareTag("Road"))
+                            {
+                                //Debug.Log("On the road");
+                                SaveScript.OnTheRoad = true;
+                                SaveScript.OnTheTerrain = false;
+                            }
                         }
-                    }
 
-                    if (SaveScript.OnTheRoad == true)
-                    {
-                        if (wheelHit.collider.CompareTag("Terrain"))
+                        if (SaveScript.OnTheRoad == true)
                         {
-                            //Debug.Log("On the terrain");
-                            SaveScript.OnTheRoad = false;
-                            SaveScript.OnTheTerrain = true;
+                            if (wheelHit.collider.CompareTag("Terrain"))
+                            {
+                                //Debug.Log("On the terrain");
+                                SaveScript.OnTheRoad = false;
+                                SaveScript.OnTheTerrain = true;
+                            }
                         }
                     }
                 }
