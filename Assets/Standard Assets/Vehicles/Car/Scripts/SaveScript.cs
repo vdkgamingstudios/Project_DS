@@ -64,6 +64,16 @@ public class SaveScript : MonoBehaviour
     //Figuring out Player position
     [Header("Player Position Variables")]
     public static int PlayerPosition;
+    public static bool BrakeSlide;
+
+    [Header("AI Player Position Variables")]
+    public static int AICar1LapNumber = 0;
+    public static int AICar2LapNumber = 0;
+    public static int AICar3LapNumber = 0;
+    public static int AICar4LapNumber = 0;
+    public static int AICar5LapNumber = 0;
+    public static int AICar6LapNumber = 0;
+    public static int AICar7LapNumber = 0;
 
     // Start is called before the first frame update
     void Start()

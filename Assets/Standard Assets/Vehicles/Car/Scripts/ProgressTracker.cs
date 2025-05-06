@@ -42,6 +42,11 @@ public class ProgressTracker : MonoBehaviour
 
     private void Update()
     {
+        if(SaveScript.LapChange == true)
+        {
+            CurrentWP = 0;
+        }
+
         if (CurrentWP > LastWPNumber) 
         {
             StartCoroutine(CheckDirection());
@@ -51,7 +56,7 @@ public class ProgressTracker : MonoBehaviour
             //Debug.Log("Right Way");
             SaveScript.WrongWay = false;
         }
-        if (LastWPNumber < ThisWPNumber)
+        if (LastWPNumber < ThisWPNumber && LastWPNumber != 1) //Not triggering when relapping around map
         {
             //Debug.Log("Wrong Way");
             SaveScript.WrongWay = true;

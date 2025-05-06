@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RaceCourseTimeTrial.unity
     guid: f786f66b2175aa749bc61384bfc21cf3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/RaceCourse.unity
     guid: aaea3e9712a15ca4088e3cc88585893b
   - enabled: 0
@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SplitCoOpTest.unity
     guid: 7aab400a223af8c4f9ecb93c20dc93a4
+  - enabled: 1
+    path: Assets/Scenes/RaceCourseAI.unity
+    guid: c3938f8e1230ce74190e0f6484a3432e
   m_configObjects: {}
