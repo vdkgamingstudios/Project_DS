@@ -16,6 +16,15 @@ public class ProgressWaypoints : MonoBehaviour
     private int Lap1Position = 0;
     private int Lap2Position = 0;
     private int Lap3Position = 0;
+    private int Lap4Position = 0;
+    private int Lap5Position = 0;
+    private int Lap6Position = 0;
+    private int Lap7Position = 0;
+    private int Lap8Position = 0;
+    private int Lap9Position = 0;
+    private int Lap10Position = 0;
+    private int Lap11Position = 0;
+    private int Lap12Position = 0;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -42,6 +51,51 @@ public class ProgressWaypoints : MonoBehaviour
                 {
                     Lap3Position++;
                     SaveScript.PlayerPosition = Lap3Position;
+                }
+                if (SaveScript.LapCount == 4)
+                {
+                    Lap4Position++;
+                    SaveScript.PlayerPosition = Lap4Position;
+                }
+                if (SaveScript.LapCount == 5)
+                {
+                    Lap5Position++;
+                    SaveScript.PlayerPosition = Lap5Position;
+                }
+                if (SaveScript.LapCount == 6)
+                {
+                    Lap6Position++;
+                    SaveScript.PlayerPosition = Lap6Position;
+                }
+                if (SaveScript.LapCount == 7)
+                {
+                    Lap7Position++;
+                    SaveScript.PlayerPosition = Lap7Position;
+                }
+                if (SaveScript.LapCount == 8)
+                {
+                    Lap8Position++;
+                    SaveScript.PlayerPosition = Lap8Position;
+                }
+                if (SaveScript.LapCount == 9)
+                {
+                    Lap9Position++;
+                    SaveScript.PlayerPosition = Lap9Position;
+                }
+                if (SaveScript.LapCount == 10)
+                {
+                    Lap10Position++;
+                    SaveScript.PlayerPosition = Lap10Position;
+                }
+                if (SaveScript.LapCount == 11)
+                {
+                    Lap11Position++;
+                    SaveScript.PlayerPosition = Lap11Position;
+                }
+                if (SaveScript.LapCount == 12)
+                {
+                    Lap12Position++;
+                    SaveScript.PlayerPosition = Lap12Position;
                 }
                 //Position++;
                 //SaveScript.PlayerPosition = Position;
@@ -80,6 +134,42 @@ public class ProgressWaypoints : MonoBehaviour
             {
                 Lap3Position++;
             }
+            if (SaveScript.AICar1LapNumber == 4)
+            {
+                Lap4Position++;
+            }
+            if (SaveScript.AICar1LapNumber == 5)
+            {
+                Lap5Position++;
+            }
+            if (SaveScript.AICar1LapNumber == 6)
+            {
+                Lap6Position++;
+            }
+            if (SaveScript.AICar1LapNumber == 7)
+            {
+                Lap7Position++;
+            }
+            if (SaveScript.AICar1LapNumber == 8)
+            {
+                Lap8Position++;
+            }
+            if (SaveScript.AICar1LapNumber == 9)
+            {
+                Lap9Position++;
+            }
+            if (SaveScript.AICar1LapNumber == 10)
+            {
+                Lap10Position++;
+            }
+            if (SaveScript.AICar1LapNumber == 11)
+            {
+                Lap11Position++;
+            }
+            if (SaveScript.AICar1LapNumber == 12)
+            {
+                Lap12Position++;
+            }
         }
         //AI Car Two
         if (other.gameObject.CompareTag("ProgressAI2"))
@@ -95,6 +185,42 @@ public class ProgressWaypoints : MonoBehaviour
             if (SaveScript.AICar2LapNumber == 3)
             {
                 Lap3Position++;
+            }
+            if (SaveScript.AICar2LapNumber == 4)
+            {
+                Lap4Position++;
+            }
+            if (SaveScript.AICar2LapNumber == 5)
+            {
+                Lap5Position++;
+            }
+            if (SaveScript.AICar2LapNumber == 6)
+            {
+                Lap6Position++;
+            }
+            if (SaveScript.AICar2LapNumber == 7)
+            {
+                Lap7Position++;
+            }
+            if (SaveScript.AICar2LapNumber == 8)
+            {
+                Lap8Position++;
+            }
+            if (SaveScript.AICar2LapNumber == 9)
+            {
+                Lap9Position++;
+            }
+            if (SaveScript.AICar2LapNumber == 10)
+            {
+                Lap10Position++;
+            }
+            if (SaveScript.AICar2LapNumber == 11)
+            {
+                Lap11Position++;
+            }
+            if (SaveScript.AICar2LapNumber == 12)
+            {
+                Lap12Position++;
             }
         }
         //AI Car Three
@@ -112,6 +238,42 @@ public class ProgressWaypoints : MonoBehaviour
             {
                 Lap3Position++;
             }
+            if (SaveScript.AICar3LapNumber == 4)
+            {
+                Lap4Position++;
+            }
+            if (SaveScript.AICar3LapNumber == 5)
+            {
+                Lap5Position++;
+            }
+            if (SaveScript.AICar3LapNumber == 6)
+            {
+                Lap6Position++;
+            }
+            if (SaveScript.AICar3LapNumber == 7)
+            {
+                Lap7Position++;
+            }
+            if (SaveScript.AICar3LapNumber == 8)
+            {
+                Lap8Position++;
+            }
+            if (SaveScript.AICar3LapNumber == 9)
+            {
+                Lap9Position++;
+            }
+            if (SaveScript.AICar3LapNumber == 10)
+            {
+                Lap10Position++;
+            }
+            if (SaveScript.AICar3LapNumber == 11)
+            {
+                Lap11Position++;
+            }
+            if (SaveScript.AICar3LapNumber == 12)
+            {
+                Lap12Position++;
+            }
         }
         //AI Car Four
         if (other.gameObject.CompareTag("ProgressAI4"))
@@ -127,6 +289,42 @@ public class ProgressWaypoints : MonoBehaviour
             if (SaveScript.AICar4LapNumber == 3)
             {
                 Lap3Position++;
+            }
+            if (SaveScript.AICar4LapNumber == 4)
+            {
+                Lap4Position++;
+            }
+            if (SaveScript.AICar4LapNumber == 5)
+            {
+                Lap5Position++;
+            }
+            if (SaveScript.AICar4LapNumber == 6)
+            {
+                Lap6Position++;
+            }
+            if (SaveScript.AICar4LapNumber == 7)
+            {
+                Lap7Position++;
+            }
+            if (SaveScript.AICar4LapNumber == 8)
+            {
+                Lap8Position++;
+            }
+            if (SaveScript.AICar4LapNumber == 9)
+            {
+                Lap9Position++;
+            }
+            if (SaveScript.AICar4LapNumber == 10)
+            {
+                Lap10Position++;
+            }
+            if (SaveScript.AICar4LapNumber == 11)
+            {
+                Lap11Position++;
+            }
+            if (SaveScript.AICar4LapNumber == 12)
+            {
+                Lap12Position++;
             }
         }
         //AI Car Five
@@ -144,6 +342,42 @@ public class ProgressWaypoints : MonoBehaviour
             {
                 Lap3Position++;
             }
+            if (SaveScript.AICar5LapNumber == 4)
+            {
+                Lap4Position++;
+            }
+            if (SaveScript.AICar5LapNumber == 5)
+            {
+                Lap5Position++;
+            }
+            if (SaveScript.AICar5LapNumber == 6)
+            {
+                Lap6Position++;
+            }
+            if (SaveScript.AICar5LapNumber == 7)
+            {
+                Lap7Position++;
+            }
+            if (SaveScript.AICar5LapNumber == 8)
+            {
+                Lap8Position++;
+            }
+            if (SaveScript.AICar5LapNumber == 9)
+            {
+                Lap9Position++;
+            }
+            if (SaveScript.AICar5LapNumber == 10)
+            {
+                Lap10Position++;
+            }
+            if (SaveScript.AICar5LapNumber == 11)
+            {
+                Lap11Position++;
+            }
+            if (SaveScript.AICar5LapNumber == 12)
+            {
+                Lap12Position++;
+            }
         }
         //AI Car Six
         if (other.gameObject.CompareTag("ProgressAI6"))
@@ -160,6 +394,42 @@ public class ProgressWaypoints : MonoBehaviour
             {
                 Lap3Position++;
             }
+            if (SaveScript.AICar6LapNumber == 4)
+            {
+                Lap4Position++;
+            }
+            if (SaveScript.AICar6LapNumber == 5)
+            {
+                Lap5Position++;
+            }
+            if (SaveScript.AICar6LapNumber == 6)
+            {
+                Lap6Position++;
+            }
+            if (SaveScript.AICar6LapNumber == 7)
+            {
+                Lap7Position++;
+            }
+            if (SaveScript.AICar6LapNumber == 8)
+            {
+                Lap8Position++;
+            }
+            if (SaveScript.AICar6LapNumber == 9)
+            {
+                Lap9Position++;
+            }
+            if (SaveScript.AICar6LapNumber == 10)
+            {
+                Lap10Position++;
+            }
+            if (SaveScript.AICar6LapNumber == 11)
+            {
+                Lap11Position++;
+            }
+            if (SaveScript.AICar6LapNumber == 12)
+            {
+                Lap12Position++;
+            }
         }
         //AI Car Seven
         if (other.gameObject.CompareTag("ProgressAI7"))
@@ -175,6 +445,42 @@ public class ProgressWaypoints : MonoBehaviour
             if (SaveScript.AICar7LapNumber == 3)
             {
                 Lap3Position++;
+            }
+            if (SaveScript.AICar7LapNumber == 4)
+            {
+                Lap4Position++;
+            }
+            if (SaveScript.AICar7LapNumber == 5)
+            {
+                Lap5Position++;
+            }
+            if (SaveScript.AICar7LapNumber == 6)
+            {
+                Lap6Position++;
+            }
+            if (SaveScript.AICar7LapNumber == 7)
+            {
+                Lap7Position++;
+            }
+            if (SaveScript.AICar7LapNumber == 8)
+            {
+                Lap8Position++;
+            }
+            if (SaveScript.AICar7LapNumber == 9)
+            {
+                Lap9Position++;
+            }
+            if (SaveScript.AICar7LapNumber == 10)
+            {
+                Lap10Position++;
+            }
+            if (SaveScript.AICar7LapNumber == 11)
+            {
+                Lap11Position++;
+            }
+            if (SaveScript.AICar7LapNumber == 12)
+            {
+                Lap12Position++;
             }
         }
         #endregion

@@ -17,6 +17,13 @@ TagManager:
   - ProgressAI5
   - ProgressAI6
   - ProgressAI7
+  - AI1
+  - AI2
+  - AI3
+  - AI4
+  - AI5
+  - AI6
+  - AI7
   layers:
   - Default
   - TransparentFX

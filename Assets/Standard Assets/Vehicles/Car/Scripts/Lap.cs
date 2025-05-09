@@ -17,8 +17,8 @@ public class Lap : MonoBehaviour
                 {
                     SaveScript.HalfWayActivated = false;
                     //SaveScript.WWDisplayReset = true;
-                    SaveScript.LastLapMinutes = SaveScript.LapTimeMinutes;
-                    SaveScript.LastLapSeconds = SaveScript.LapTimeSeconds;
+                    SaveScript.LastLapMinutes = SaveScript.LapTimeMinutes; 
+                    SaveScript.LastLapSeconds = SaveScript.LapTimeSeconds; 
                     SaveScript.LapCount++;
                     SaveScript.LapChange = true;
 
