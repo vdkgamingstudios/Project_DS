@@ -24,6 +24,7 @@ TagManager:
   - AI5
   - AI6
   - AI7
+  - MiniMap
   layers:
   - Default
   - TransparentFX

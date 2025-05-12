@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class TimeTrialUI : MonoBehaviour
@@ -15,6 +16,7 @@ public class TimeTrialUI : MonoBehaviour
     public TMP_Text TimeTrialMinutesBTxt;
     public TMP_Text TimeTrialSecondsBTxt;
     public TMP_Text WinMessage;
+    public TMP_Text Credits;
 
     //Time Trial game object
     [Header("Time Trial Related Game Object")]
@@ -23,6 +25,11 @@ public class TimeTrialUI : MonoBehaviour
     public GameObject GoldStar;
     public GameObject SilverStar;
     public GameObject BronzeStar;
+    public int GoldCredits = 200;
+    public int SilverCredits = 150;
+    public int BronzeCredits = 100;
+
+    public GameObject QuitPanel;
 
     //Variables to hold time trial values
     public bool Winner = false;
@@ -32,6 +39,7 @@ public class TimeTrialUI : MonoBehaviour
     {
         TimeTrialObject.SetActive(true);
         TimeTrialResults.SetActive(false);
+        QuitPanel.SetActive(false); 
     }
 
     // Update is called once per frame
@@ -104,6 +112,11 @@ public class TimeTrialUI : MonoBehaviour
         }
 
         #endregion
+
+        if (Input.GetKeyDown(KeyCode.Escape)) 
+        {
+            QuitPanel.SetActive(true);
+        }
     }
 
     IEnumerator ResultsMessage()
@@ -117,20 +130,43 @@ public class TimeTrialUI : MonoBehaviour
         {
             WinMessage.text = "YOU WON GOLD!";
             GoldStar.SetActive(true);
+            Credits.text = GoldCredits.ToString();
+            UniversalSave.CreditAmount = UniversalSave.CreditAmount += GoldCredits;
+            UniversalSave.RacesWon++;
         }
         if (SaveScript.Silver == true)
         {
             WinMessage.text = "YOU WON SILVER!";
             SilverStar.SetActive(true);
+            Credits.text = SilverCredits.ToString();
+            UniversalSave.CreditAmount = UniversalSave.CreditAmount += SilverCredits;
+            UniversalSave.RacesWon++;
         }
         if (SaveScript.Bronze == true)
         {
             WinMessage.text = "YOU WON BRONZE!";
             BronzeStar.SetActive(true);
+            Credits.text = BronzeCredits.ToString();
+            UniversalSave.CreditAmount = UniversalSave.CreditAmount += BronzeCredits;
+            UniversalSave.RacesWon++;
         }
         if (SaveScript.Fail == true)
         {
-            WinMessage.text = "BETTER LUCK NEXT TIME";
+            WinMessage.text = "TRY AGAIN";
+            Credits.text = "0";
+            UniversalSave.RacesLost++;
         }
+
+        UniversalSave.Saving = true;
+    }
+
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void QuitClose()
+    {
+        QuitPanel.SetActive(false);
     }
 }
