@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class UIScript : MonoBehaviour
@@ -9,8 +10,8 @@ public class UIScript : MonoBehaviour
     //Displayed related to speed and laps
     [Header("Speed and Lap Variables")]
     private float DisplaySpeed;
-    public int TotalLaps = 3;
-    public int TotalCars = 1;
+    private int TotalLaps = 3; //use to be public
+    private int TotalCars = 1; //use to be public
 
     //UI Display text for speed, lap count, total lap and time related items 
     [Header("Display text for Speed, Laps and Time")]
@@ -38,9 +39,27 @@ public class UIScript : MonoBehaviour
     public GameObject NewLapRecordDisplay;
     public GameObject WrongWayDisplay;
 
+    //Opponent Cars
+    [Header("Opponent Cars Variables")]
+    public bool RaceTrack = true;
+    public GameObject RaceOpponent1;
+    public GameObject RaceOpponent2;
+    public GameObject RaceOpponent3;    
+    public GameObject RaceOpponent4;
+    public GameObject RaceOpponent5;
+    public GameObject RaceOpponent6;
+    public GameObject RaceOpponent7;
+
+    //Menu Items
+    [Header("Menu")]
+    public GameObject QuitMenu;
+
     // Start is called before the first frame update
     void Start()
     {
+        //Setting variables and displays
+        TotalLaps = UniversalSave.LapCounts;
+        TotalCars = UniversalSave.OpponentsCount + 1; //Player to the total amount of cars in the race
         SpeedRing.fillAmount = 0;
         SpeedText.text = "0";
         LapCountText.text = "0";
@@ -51,6 +70,98 @@ public class UIScript : MonoBehaviour
         SaveScript.MaxLaps = TotalLaps;
         TotalCarsText.text = "/" + TotalCars.ToString();
         PlayersPositionText.text = "1";
+
+        if (RaceTrack == true) 
+        {
+            //Deciding how many opponents
+            SetCarVisibility();
+            QuitMenu.SetActive(false);
+        }
+    }
+
+    void SetCarVisibility()
+    {
+        //One number higher to include player car in count
+        if (TotalCars == 1) //Just the Player
+        {
+            RaceOpponent1.SetActive(false);
+            RaceOpponent2.SetActive(false);
+            RaceOpponent3.SetActive(false);
+            RaceOpponent4.SetActive(false);
+            RaceOpponent5.SetActive(false);
+            RaceOpponent6.SetActive(false);
+            RaceOpponent7.SetActive(false);
+        }
+        if (TotalCars == 2)
+        {
+            RaceOpponent1.SetActive(true);
+            RaceOpponent2.SetActive(false);
+            RaceOpponent3.SetActive(false);
+            RaceOpponent4.SetActive(false);
+            RaceOpponent5.SetActive(false);
+            RaceOpponent6.SetActive(false);
+            RaceOpponent7.SetActive(false);
+        }
+        if (TotalCars == 3)
+        {
+            RaceOpponent1.SetActive(true);
+            RaceOpponent2.SetActive(true);
+            RaceOpponent3.SetActive(false);
+            RaceOpponent4.SetActive(false);
+            RaceOpponent5.SetActive(false);
+            RaceOpponent6.SetActive(false);
+            RaceOpponent7.SetActive(false);
+        }
+        if (TotalCars == 4)
+        {
+            RaceOpponent1.SetActive(true);
+            RaceOpponent2.SetActive(true);
+            RaceOpponent3.SetActive(true);
+            RaceOpponent4.SetActive(false);
+            RaceOpponent5.SetActive(false);
+            RaceOpponent6.SetActive(false);
+            RaceOpponent7.SetActive(false);
+        }
+        if (TotalCars == 5)
+        {
+            RaceOpponent1.SetActive(true);
+            RaceOpponent2.SetActive(true);
+            RaceOpponent3.SetActive(true);
+            RaceOpponent4.SetActive(true);
+            RaceOpponent5.SetActive(false);
+            RaceOpponent6.SetActive(false);
+            RaceOpponent7.SetActive(false);
+        }
+        if (TotalCars == 6)
+        {
+            RaceOpponent1.SetActive(true);
+            RaceOpponent2.SetActive(true);
+            RaceOpponent3.SetActive(true);
+            RaceOpponent4.SetActive(true);
+            RaceOpponent5.SetActive(true);
+            RaceOpponent6.SetActive(false);
+            RaceOpponent7.SetActive(false);
+        }
+        if (TotalCars == 7)
+        {
+            RaceOpponent1.SetActive(true);
+            RaceOpponent2.SetActive(true);
+            RaceOpponent3.SetActive(true);
+            RaceOpponent4.SetActive(true);
+            RaceOpponent5.SetActive(true);
+            RaceOpponent6.SetActive(true);
+            RaceOpponent7.SetActive(false);
+        }
+        if (TotalCars == 8)
+        {
+            RaceOpponent1.SetActive(true);
+            RaceOpponent2.SetActive(true);
+            RaceOpponent3.SetActive(true);
+            RaceOpponent4.SetActive(true);
+            RaceOpponent5.SetActive(true);
+            RaceOpponent6.SetActive(true);
+            RaceOpponent7.SetActive(true);
+        }
     }
 
     // Update is called once per frame
@@ -233,6 +344,14 @@ public class UIScript : MonoBehaviour
         #region Player Position
         PlayersPositionText.text = SaveScript.PlayerPosition.ToString();
         #endregion
+
+        if(RaceTrack == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape)) 
+            {
+                QuitMenu.SetActive(true);
+            }
+        }
     }
 
     IEnumerator CheckPointOff()
@@ -246,5 +365,20 @@ public class UIScript : MonoBehaviour
         yield return new WaitForSeconds(2);
         SaveScript.NewRecord = false;
         NewLapRecordDisplay.SetActive(false);
+    }
+
+    public void QuitRace()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void CloseQuitMenu()
+    {
+        QuitMenu.SetActive(false);
+    }
+
+    public void RaceReturnToMenu()
+    {
+        SceneManager.LoadScene(1);
     }
 }
