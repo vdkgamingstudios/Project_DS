@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIMainMenu : MonoBehaviour
 {
     //Placement in Race
     [Header("Player Credits")]
     public TMP_Text CreditsText;
+    public GameObject Warning;
 
     public GameObject StatsPanel;
 
@@ -27,5 +29,22 @@ public class UIMainMenu : MonoBehaviour
     public void SwitchOnStats()
     {
         StatsPanel.SetActive(true);
+    }
+
+    public void TurnOnForOneSecond()
+    {
+        StartCoroutine(TurnOnTemporarily());
+    }
+
+    private IEnumerator TurnOnTemporarily()
+    {
+        Warning.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        Warning.SetActive(false);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
